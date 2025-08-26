@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Farah Islam • eCommerce & Web Portfolio</title>
+
+
+
+<!-- Fonts & Icons (optional) -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+
+<style>
+:root{
+--bg:#000; --bg-2:#0f0f0f; --fg:#fff; --muted:#cfcfcf;
+
+--red:#ff1a1a; --red-2:#b00000; --card:#141414; --border:#2a2a2a;
+
+--shadow: 0 10px 30px rgba(255,0,0,.15);
+
+}
+*{box-sizing:border-box}
+
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+
+a{color:inherit;text-decoration:none}
+
+.container{width:min(1100px,92%);margin-inline:auto}
+
+
+
+/* NAV */
+
+.nav{
+
+position:sticky; top:0; z-index:50; background:rgba(0,0,0,.7);
+
+backdrop-filter: blur(6px); border-bottom:1px solid var(--border);
+
+}
+
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+
+.brand i{color:var(--red)}
+
+.menu{display:flex;gap:22px}
+
+.menu a{padding:8px 10px;border-radius:8px;font-weight:600;color:#ddd}
+
+.menu a:hover,.menu a.active{color:#fff;background:#1a1a1a;border:1px solid var(--border)}
+
+.burger{display:none;background:none;border:0;color:#fff;font-size:22px}
+
+
+
+/* HERO */
+
+.hero{background:linear-gradient(180deg,#0a0a0a 0%, #000 100%);padding:70px 0 40px}
+
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+
+.kicker{color:var(--red);font-weight:700;letter-spacing:.12em}
+
+.hero h1{font-size:42px;line-height:1.15;margin:.2rem 0 1rem}
+
+.hero p{color:var(--muted);font-size:16.5px}
+
+.cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+
+.btn{padding:12px 18px;border-radius:10px;font-weight:700;border:2px solid var(--red);cursor:pointer;transition:.25s}
+
+.btn.primary{background:var(--red);color:#fff}
+
+.btn.primary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+.btn.ghost{background:transparent;color:#fff}
+
+.btn.ghost:hover{background:#1b0000}
+
+
+
+.portrait{
+
+width:min(420px,100%); margin-inline:auto; border-radius:18px; overflow:hidden;
+
+border:2px solid var(--red-2); box-shadow:var(--shadow)
+
+}
+
+.portrait img{display:block;width:100%;height:auto}
+
+
+
+/* SECTIONS */
+
+section{padding:70px 0;border-top:1px solid var(--border)}
+
+.section-title{
+
+text-align:center;margin-bottom:28px;font-size:28px
+
+}
+
+.section-title span{color:var(--red)}
+
+.muted{color:var(--muted);text-align:center;margin:-8px auto 30px;max-width:780px}
+
+
+
+/* CARDS */
+
+.grid{display:grid;gap:18px}
+
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+
+.card{
+
+background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px;
+
+transition:.25s
+
+}
+
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+
+.badge{display:inline-block;background:#1a0000;border:1px solid var(--red-2);color:#ffb3b3;
+
+padding:6px 10px;border-radius:999px;font-size:12px;margin:4px 6px 0 0}
+
+
+
+/* CONTACT */
+
+.contact .row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+
+.input{
+
+width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);
+
+background:#0c0c0c;color:#fff
+
+}
+
+textarea.input{min-height:140px;resize:vertical}
+
+.note{font-size:13px;color:#9b9b9b;margin-top:6px}
+
+
+
+/* FOOTER */
+
+footer{padding:28px 0;border-top:1px solid var(--border);background:var(--bg-2);text-align:center;color:#bdbdbd}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px){
+
+.hero-grid{grid-template-columns:1fr;gap:28px}
+
+}
+
+@media (max-width: 720px){
+
+.menu{display:none}
+
+.menu.open{display:flex;flex-direction:column;gap:10px;position:absolute;left:0;right:0;top:58px;background:#0a0a0a;padding:12px;border-bottom:1px solid var(--border)}
+
+.burger{display:block}
+
+.grid.cols-3{grid-template-columns:1fr 1fr}
+
+}
+
+@media (max-width:520px){
+
+.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+
+.hero h1{font-size:34px}
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<!-- NAV -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<div class="brand"><i class="fa-solid fa-shop"></i> Farah Islam</div>
+
+<button class="burger" aria-label="menu"><i class="fa-solid fa-bars"></i></button>
+
+<div class="menu" id="menu">
+
+<a href="#home" class="active">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="kicker">E‑COMMERCE • SHOPIFY • WORDPRESS</div>
+
+<h1>I build and manage online stores, product listings, and end-to-end order & shipment workflows.</h1>
+
+<p>
+
+I’m <strong>Farah Islam</strong> — experienced in product listing, order management, shipment coordination (including Daraz), building Shopify & WordPress stores, and video editing for product content.
+
+</p>
+
+<div class="cta">
+
+<a class="btn primary" href="mailto:farahislam169@gmail.com"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+
+<a class="btn ghost" href="#projects"><i class="fa-solid fa-briefcase"></i> View Projects</a>
+
+</div>
+
+</div>
+
+
+
+<!-- Your photo on the side (no crop) -->
+
+<div class="portrait">
+
+<!-- Replace src below with your hosted image URL if needed -->
+
+<img src="WhatsApp Image 2025-08-23 at 2.58.07 AM-Photoroom.png" alt="Farah Islam Portrait">
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title"><span>About</span> Me</h2>
+
+<p class="muted">
+
+I specialise in practical e-commerce operations: listing products with optimized titles/descriptions, categorization, price & variant setup, managing inventory, processing orders, coordinating shipments (Daraz experience), and creating product videos and visual assets to boost conversion.
+
+I also build and customize Shopify and WordPress stores — from theme setup and product import to payment and shipping configuration.
+
+</p>
+
+<div class="grid cols-3">
+
+<div class="card">
+
+<h3>Core Focus</h3>
+
+<p class="muted">Product Listing • Order Management • Shipment Coordination (Daraz)</p>
+
+</div>
+
+<div class="card">
+
+<h3>Web Skills</h3>
+
+<p class="muted">Shopify • WordPress • Theme Setup • Product Import • Payment & Shipping</p>
+
+</div>
+
+<div class="card">
+
+<h3>Other</h3>
+
+<p class="muted">Video Editing • Sales Execution • Clear documentation & fast turnarounds</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title"><span>Skills</span></h2>
+
+<div class="grid cols-3">
+
+<div class="card">
+
+<strong>E‑commerce Ops</strong>
+
+<div>
+
+<span class="badge">Product Listing</span>
+
+<span class="badge">Inventory Mgmt</span>
+
+<span class="badge">Order Processing</span>
+
+<span class="badge">Daraz Listings</span>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<strong>Web Development</strong>
+
+<div>
+
+<span class="badge">Shopify</span>
+
+<span class="badge">WordPress</span>
+
+<span class="badge">Theme Setup</span>
+
+<span class="badge">Payment Setup</span>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<strong>Media & Sales</strong>
+
+<div>
+
+<span class="badge">Video Editing</span>
+
+<span class="badge">Product Photography</span>
+
+<span class="badge">Sales Executive (BeForward Japan)</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title"><span>Projects</span></h2>
+
+<p class="muted">Selected work that highlights e‑commerce, web, and media skills.</p>
+
+
+
+<div class="grid cols-3">
+
+<div class="card">
+
+<h3>Shopify Store — Fashion Retail</h3>
+
+<p class="muted">Full store setup, product import (500+ SKUs), payment & shipping integration, and launch checklist.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Daraz Marketplace Management</h3>
+
+<p class="muted">Product listings, SKU mapping, promotional setup, order reconciliation and shipment coordination.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Product Video & Content</h3>
+
+<p class="muted">Short product videos, editing for listings and ads, thumbnails and optimized visuals to increase CTR.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2 class="section-title"><span>Contact</span></h2>
+
+<p class="muted">I usually respond within 24 hours.</p>
+
+<div class="row">
+
+<form action="https://formsubmit.co/farahislam169@gmail.com" method="POST" class="card">
+
+<!-- Tip: replace action with your own form handler or mailto if you prefer -->
+
+<input type="hidden" name="_captcha" value="false">
+
+<input class="input" name="name" placeholder="Your name" required>
+
+<input class="input" name="email" type="email" placeholder="Email" required style="margin-top:10px">
+
+<textarea class="input" name="message" placeholder="Your message" style="margin-top:10px"></textarea>
+
+<button class="btn primary" type="submit" style="margin-top:12px;width:100%">Send Message</button>
+
+<div class="note">Or email directly: <a href="mailto:farahislam169@gmail.com">farahislam169@gmail.com</a></div>
+
+</form>
+
+
+
+<div class="card">
+
+<h3>Connect</h3>
+
+<p class="muted">
+
+<i class="fa-brands fa-linkedin"></i>
+
+<a href="https://linkedin.com/in/farahislam" target="_blank"> linkedin.com/in/farahislam</a><br>
+
+<i class="fa-brands fa-github"></i>
+
+<a href="https://github.com/farahislam" target="_blank"> github.com/farahislam</a><br>
+
+<i class="fa-solid fa-envelope"></i>
+
+<a href="mailto:farahislam169@gmail.com"> farahislam169@gmail.com</a>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+© <span id="y"></span> Farah Islam — eCommerce • Shopify • WordPress — Crafted in a black & red theme
+
+</footer>
+
+
+
+<script>
+
+/* mobile menu */
+
+const burger=document.querySelector('.burger');
+
+const menu=document.getElementById('menu');
+
+burger?.addEventListener('click',()=>menu.classList.toggle('open'));
+
+
+
+/* active link on scroll */
+
+const links=[...document.querySelectorAll('.menu a')];
+
+const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+
+const onScroll=()=>{
+
+let i=sections.findIndex(sec=>sec.getBoundingClientRect().top>100)-1;
+
+if(i<0) i=sections.length-1;
+
+links.forEach(l=>l.classList.remove('active'));
+
+links[i]?.classList.add('active');
+
+};
+
+document.addEventListener('scroll',onScroll,{passive:true});
+
+document.getElementById('y').textContent=new Date().getFullYear();
+
+</script>
+
+</body>
+
+</html>
